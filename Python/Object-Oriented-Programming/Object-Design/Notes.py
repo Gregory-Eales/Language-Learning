@@ -41,6 +41,8 @@ p2 = Point()
 print(p1.calculate_distance(p2))
 
 
+""" An example module can me structured in many different ways """
+
 
 
 
