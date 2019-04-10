@@ -1,9 +1,10 @@
 var ballx = 50;
 var bally = 200;
-var changeX = -5;
-var changeY = 0;
+var changeX = -11;
+var changeY = -1;
 var paddleX = 20;
 var paddleY = 0;
+var score = 0;
 
 function setup() {
   createCanvas(800, 600); 
@@ -11,14 +12,24 @@ function setup() {
 
 function draw() {
     background(0);
+    fill(255);
+    textSize(50);
+    text("Score: ", 10, 10, 100, 100);
+    text(score, 160, 53);
     if (ballx > 780 || ballx < 10 ){
         changeX = -changeX;
+    
+    }
+    
+    if (bally > 550 || bally < 10 ){
         changeY = -changeY;
     }
+    
     if (ballx < paddleX+20 && ballx > paddleX){
         if (bally < paddleY+80 && bally > paddleY){
             changeX = -changeX;
             changeY = -changeY;
+            score = score + 1;
         }
     }
   ballx = ballx - changeX;
@@ -38,19 +49,19 @@ function draw_paddle(){
 
 function get_key(){
   if (keyCode == DOWN_ARROW){
-    paddleY += 10;
+    paddleY += 20;
   }
   
   if (keyCode == UP_ARROW){
-    paddleY -= 10;
+    paddleY -= 20;
   }
   
   if (keyCode == LEFT_ARROW){
-    paddleX -= 10;
+    //paddleX -= 10;
   }
   
   if (keyCode == RIGHT_ARROW){
-    paddleX += 10;
+    //paddleX += 10;
   }
     
     
