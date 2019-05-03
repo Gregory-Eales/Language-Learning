@@ -1,0 +1,12 @@
+/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=/Users/gregeales/CLionProjects/LogisticRegressionTTT/cmake-build-debug/CMakeFiles/3.10.3/CMakeCXXCompiler.cmake -G "CodeBlocks - Unix Makefiles" /Users/gregeales/CLionProjects/untitled1
+CMake Error at /Applications/CLion.app/Contents/bin/cmake/share/cmake-3.10/Modules/CMakeDetermineCCompiler.cmake:48 (message):
+  Could not find compiler set in environment variable CC:
+
+  /usr/local/Cellar/gcc/5.1.0/bin/gcc-5.
+Call Stack (most recent call first):
+  CMakeLists.txt:2 (project)
+
+
+CMake Error: CMAKE_C_COMPILER not set, after EnableLanguage
+-- Configuring incomplete, errors occurred!
+See also "/Users/gregeales/CLionProjects/untitled1/cmake-build-debug/CMakeFiles/CMakeOutput.log".
