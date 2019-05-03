@@ -1,8 +1,6 @@
 var back_img;
-var x = 5;
-var y = 300;
-var x_speed = 2;
-var y_speed = 1;
+var char_x = 5;
+var char_y = 300;
 
 function setup() {
     createCanvas(600, 600);
@@ -11,11 +9,10 @@ function setup() {
 }
 
 function draw() {
+    // draw background
+    background(0);
+    draw_character(char_x, char_y);
     
-    if (1==1) {
-        background(0);
-        draw_ball(x, y)
-    }
     
     x = x + x_speed;
     
@@ -30,7 +27,25 @@ function draw() {
 }
 
 
-function draw_ball(x, y) {
+function draw_character(x, y) {
     rect(x, y, 10, 10);
     
 }
+
+
+function get_key(){
+  if (keyCode == DOWN_ARROW){
+    paddleY += 20;
+  }
+  
+  if (keyCode == UP_ARROW){
+    paddleY -= 20;
+  }
+  
+  if (keyCode == LEFT_ARROW){
+    //paddleX -= 10;
+  }
+  
+  if (keyCode == RIGHT_ARROW){
+    //paddleX += 10;
+  }
