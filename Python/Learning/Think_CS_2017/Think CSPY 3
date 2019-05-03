@@ -1,0 +1,296 @@
+import turtle
+import os
+
+"""
+print("Hello, World!")
+print(1 + 1)
+print(2**3)
+print(5**2)
+n = 1
+for i in range(10):
+    n += i*2
+    print(n)
+
+list = ["All", "work", "and", "no", "play", "makes", "Jack", "a", "dull", "boy"]
+string = ""
+for i in list:
+    string += i + " "
+print(string)
+"""
+"""
+screen = turtle.Screen()
+turtle = turtle.Turtle()
+screen.bgcolor("lightgreen")
+turtle.color("blue")
+turtle.speed(0)
+for i in range(12):
+    turtle.penup()
+    turtle.forward(240)
+    turtle.pendown()
+    turtle.forward(15)
+    turtle.penup()
+    turtle.left(180)
+    turtle.forward(265)
+    turtle.left(180)
+    turtle.right(30)
+screen.mainloop()
+"""
+"""
+
+def Square_Drawer(turtle, size):
+    for i in range(4):
+        turtle.forward(size)
+        turtle.left(90)
+"""
+
+"""
+screen = turtle.Screen()
+turtle = turtle.Turtle()
+screen.bgcolor("lightgreen")
+turtle.color("blue")
+turtle.speed(0)
+for i in range(20):
+    Square_Drawer(turtle, 20*i)
+    turtle.penup()
+    turtle.right(90)
+    turtle.forward(10)
+    turtle.right(90)
+    turtle.forward(10)
+    turtle.left(180)
+    turtle.pendown()
+"""
+
+""""
+def Day_Translator(number):
+    days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    x = days[number]
+    return x
+
+
+for i in range(7):
+    Day_Translator(i)
+
+listy = [1, 2, 3, 4, 5, 6]
+
+""""""
+def list_doubler(listy):
+    new_list = []
+    for i in range(len(listy)):
+        new_list.append(listy[i]*2)
+    return new_list
+
+
+x = "Hello, hello"
+x = list("31051345315245")
+print(x)
+
+this = ["I", "am", "not", "a", "crook"]
+that = ["I", "am", "not", "a", "crook"]
+print("Test 1: {0}".format(this is that))
+that = this
+print("Test 2: {0}".format(this is that))
+import math
+print(math.pi)
+x = "hello my name is gregory".split()
+print(x)
+"""
+
+"""
+class Rectangle:
+    def __init__(self, width, height):
+        print(type(width))
+        self.width = width
+        self.height = height
+
+    def area(self):
+        area = self.width * self.height
+        return area
+
+    def perimiter(self):
+        perimeter = 2 * (self.width + self.height)
+        return perimeter
+
+rec = Rectangle(10, 10)
+print(rec.area(), rec.perimiter())
+
+class Point:
+    def __init__(self, point1, point2):
+        self.x1 = point1[0]
+        self.y1 = point1[1]
+        self.x2 = point2[0]
+        self.y2 = point2[1]
+
+
+    def distance_origin(self):
+        distance = (((self.x1-self.x2)**2)+((self.y1-self.y2)**2))**0.5
+        return distance
+
+    def mid_point(self):
+        middy = ((self.x1-self.x2)/2, (self.y1-self.y2)/2)
+        return middy
+
+    def reflect_x(self):
+        reflected1 = [self.x1, -self.y1]
+        reflected2 = [self.x2, -self.y2]
+        return reflected1, reflected2
+point1 = [3, 4]
+point2 = [6, 8]
+p = Point(point1, point2)
+print(p.distance_origin(), p.mid_point(), p.reflect_x())
+"""
+
+""""
+def list_unnester(nested):
+    unnested = []
+    for i in nested:
+        if type([]) == type(i):
+            (unnested.append(list_unnester(i)[0]))
+            ("suceed")
+        else:
+            unnested.append(i)
+            print("not")
+    return unnested
+
+
+nested = [1, [4, [5]]]
+
+print(list_unnester(nested))
+
+def get_dirlist(path):
+    dirlist = os.listdir(path)
+    dirlist.sort()
+    return dirlist
+get_dirlist()
+"""
+"""""
+translator = {}
+translator["one"] = "uno"
+translator["two"] = "dos"
+del translator["one"]
+print(translator)
+
+inventory = {}
+inventory["Processors"] = 100
+inventory["Monitors"] = 135
+inventory["Power Adaptors"] = 73
+
+print(inventory)
+inventory["Monitors"] = 60
+print(inventory)
+print(len(inventory))
+print(list(inventory))
+print(inventory.keys())
+for i in inventory.keys():
+    print(inventory[i])
+
+matrix = {(0, 0):10, (1, 1):13, (5, 4):18}
+print(matrix.get((1, 10), 0))
+
+x = "Arianna is a smelly fart"
+letter_count = {}
+for letter in x:
+    letter_count[letter] = letter_count.get(letter, 0) + 1
+
+print(letter_count)
+
+for i in letter_count.keys():
+    print(i, letter_count[i])
+
+"""
+"""
+
+class MyTime:
+    def __init__(self, s, m, h):
+        self.seconds = s
+        self.minutes = m
+        self.hours = h
+
+    def __str__(self):
+        return str(self.minutes) + ":" + str(self.seconds) + ":" + str(self.hours)
+
+    def __sub__(self, other):
+        a = self.seconds - other.seconds
+        return a
+def add_time(t1, t2):
+    s = t1.seconds + t2.seconds
+    m = t1.minutes + t2.minutes
+    h = t1.hours + t2.hours
+    sum_t = MyTime(s, m, h)
+    return sum_t
+
+now = MyTime(10, 10, 10)
+later = MyTime(10, 10, 10)
+
+print(now-later)
+
+def multadd(x, y, z):
+    return x * y + z
+print(multadd(1, 2, 3))
+"""
+
+
+class Card:
+    suits = ["Clubs", "Diamonds", "Hearts", "Spades"]
+    ranks = ["narf", "Ace", "2", "3", "4", "5", "6", "7",
+             "8", "9", "10", "Jack", "Queen", "King"]
+
+    def __init__(self, suit=0, rank=0):
+        self.suit = suit
+        self.rank = rank
+
+    def __str__(self):
+        return self.ranks[self.rank] + " of " + self.suits[self.suit]
+
+    def __cmp__(self, other):
+        if self.suit > other.suit:
+            return 1
+        if self.suit < other.suit:
+            return -1
+        if self.rank > other.rank:
+            return 1
+        if self.rank < other.rank:
+            return -1
+        return 0
+
+    def __eq__(self, other):
+        return self.__cmp__(other) == 0
+
+    def __le__(self, other):
+        return self.__cmp__(other) <= 0
+
+    def __ge__(self, other):
+        return self.__cmp__(other) >= 0
+
+    def __gt__(self, other):
+        return self.__cmp__(other) > 0
+
+    def __lt__(self, other):
+        return self.__cmp__(other) < 0
+
+    def __ne__(self, other):
+        return self.__cmp__(other) != 0
+
+class Deck:
+
+    def __init__(self):
+        self.cards = []
+        for suit in range(4):
+            for rank in range(1, 14):
+                self.cards.append(Card(suit, rank))
+
+    def Print_Deck(self):
+        for card in self.cards:
+            print(card)
+
+    def __str__(self):
+        s = ""
+        for i in range(len(self.cards)):
+            s = s + " " * i + str(self.cards[i]) + "\n"
+        return s
+
+
+card1 = Card(2, 9)
+card2 = Card(2, 9)
+print(card1 == card2)
+ass = Deck()
+print(ass)
