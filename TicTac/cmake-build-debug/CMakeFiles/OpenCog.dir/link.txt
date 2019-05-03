@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/OpenCog.dir/main.cpp.o CMakeFiles/OpenCog.dir/AtomSpace/Atoms.cpp.o CMakeFiles/OpenCog.dir/NeuralNetwork.cpp.o CMakeFiles/OpenCog.dir/TicTacToe.cpp.o  -o OpenCog 
