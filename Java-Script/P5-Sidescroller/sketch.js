@@ -7,10 +7,16 @@ function setup() {
 
 function draw() {
     
+    while True {
+        background(0);
+        rect(10, 20, 10, 10);
+    }
     
-    background(0);
-    rect(1, 2, 20, 10);
-    //image(back_img, 0, 0, 1000, 1000);
+    
 }
 
 
+function draw_ball(x, y) {
+    rect(x, y, 10, 10);
+    
+}
