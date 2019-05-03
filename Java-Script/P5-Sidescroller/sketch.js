@@ -1,17 +1,31 @@
 var back_img;
+var x = 5;
+var y = 300;
+var x_speed = 2;
+var y_speed = 1;
 
 function setup() {
     createCanvas(600, 600);
+    
     //back_img = loadImage('assets⁩/back.png');
 }
 
 function draw() {
     
-    while True {
+    if (1==1) {
         background(0);
-        rect(10, 20, 10, 10);
+        draw_ball(x, y)
     }
     
+    x = x + x_speed;
+    
+    if (x > 580){
+        x_speed = -x_speed;
+    }
+    
+    if (x < 3){
+        x_speed = -x_speed;
+    }
     
 }
 
