@@ -6,6 +6,8 @@ This is a collection of intermediate to advanced learnings in different programm
 * Python
 * C++
 * R
+* JavaScript
+* Web Langauges: combination of html, css, and javascript for web applications
 
 ## License
 
