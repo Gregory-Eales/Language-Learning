@@ -5,7 +5,7 @@ var char_y = 100;
 var char_vx = 0;
 var char_vy = 0;
 var char_ax = 0;
-var char_ay = 0;
+var char_ay = 0.3;
 
 var ground_level = 310
 
@@ -18,8 +18,11 @@ function setup() {
 function draw() {
     // draw background
     background(0);
+    update_physics()
+    get_key()
     draw_character(char_x, char_y);
     draw_ground();
+    
     
 }
 
@@ -36,20 +39,43 @@ function draw_character(x, y) {
 }
 
 
+function update_physics(){
+    
+    // update location
+    char_x = char_x + char_vx;
+    char_y = char_y + char_vy;
+    
+    // update velocity
+    char_vx = char_vx + char_ax;
+    char_vy = char_vy + char_ay;
+    
+    if (char_y > 290){
+        char_y = 290;
+    }
+    
+}
+
+
 function get_key(){
+
   if (keyCode == DOWN_ARROW){
-      1+1;
+      
   }
   
-  if (keyCode == UP_ARROW){
-    paddleY -= 20;
+  if ((keyCode == UP_ARROW) && (char_y >= 290)){
+    char_vy = - 5;
+    keyCode = 0;
   }
   
-  if (keyCode == LEFT_ARROW){
-    //paddleX -= 10;
+  if (keyIsDown(LEFT_ARROW)){
+    char_x -= 1;
+    keyCode = 0;
   }
   
-  if (keyCode == RIGHT_ARROW){
-    //paddleX += 10;
+  if (keyIsDown(RIGHT_ARROW)){
+    char_x += 1;
+    keyCode = 0;
   }
+    
+    
 }
