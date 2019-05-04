@@ -53,6 +53,14 @@ function update_physics(){
         char_y = 290;
     }
     
+    if (char_x > 600){
+        char_x=0;
+    }
+    
+    if (char_x < 0){
+        char_x = 600;
+    }
+    
 }
 
 
@@ -62,18 +70,18 @@ function get_key(){
       
   }
   
-  if ((keyCode == UP_ARROW) && (char_y >= 290)){
+  if ((keyIsDown(UP_ARROW)) && (char_y >= 290)){
     char_vy = - 5;
     keyCode = 0;
   }
   
   if (keyIsDown(LEFT_ARROW)){
-    char_x -= 1;
+    char_x -= 2;
     keyCode = 0;
   }
   
   if (keyIsDown(RIGHT_ARROW)){
-    char_x += 1;
+    char_x += 2;
     keyCode = 0;
   }
     
