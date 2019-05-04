@@ -13,6 +13,8 @@ var ceiling_y_array;
 var move_tracker = 0;
 var last_length;
 var score = 0;
+var gif_loadImg = loadImage("assets⁩/⁨PNG⁩/⁨sprites⁩/⁨player⁩/idle/player-idle-1.png⁩");
+var gif_createImg = createImg("assets⁩/⁨PNG⁩/⁨sprites⁩/⁨player⁩/idle/player-idle-1.png⁩");
 
 
 function setup() {
@@ -57,7 +59,8 @@ function draw_ground(){
 
 function draw_character(x, y) {
     fill(255, 255, 255);
-    rect(char_x, char_y, scale/60, scale/60);   
+    rect(char_x, char_y, scale/60, scale/60);
+    //image(gif_loadImg, 10, 10, 10, 10);
 }
 
 
