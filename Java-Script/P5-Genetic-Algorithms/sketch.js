@@ -61,7 +61,7 @@ class Organism {
     }
     
     get size(){
-        return size;
+        return this.size;
     }
     
     // methods
@@ -69,6 +69,10 @@ class Organism {
     draw(){
         fill(this.color[0], color[1], color[2]);
         rect(this.x, this.y, this.size, this.size);
+    }
+    
+    move(){
+        
     }
 }
 
