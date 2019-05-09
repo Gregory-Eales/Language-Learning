@@ -13,8 +13,8 @@ function setup() {
     
     // generate population
     
-    pop = new Population(10);
-    energy = new Energy(30);
+    pop = new Population(5);
+    energy = new Energy(5);
     
 
 }
@@ -50,6 +50,9 @@ class Organism {
         this.size = size;
         this.weights = 1;
         this.energy = 1;
+        this.bit_to_move = 0;
+        this.dx = 0;
+        this.dy = 0;
     }
     
     // methods
@@ -62,25 +65,22 @@ class Organism {
     
     greedy_move(){
         
-        var bit_to_move = 0;
         var smallest_delta = 10*scaler;
-        var dy;
-        var dx;
         
-        for (var i = 0; i < energy.bits.length; i++){
-            dy = energy.bits[i].y - this.y;
-            dx = energy.bits[i].x - this.x;
-            if (dy + dx < smallest_delta){
-                smallest_delta = dy + dx;
-                bit_to_move = i;
+        for (var j = 0; j < energy.bits.length; j++){
+            this.dy = Math.abs(energy.bits[j].y - this.y);
+            this.dx = Math.abs(energy.bits[j].x - this.x);
+            if (this.dy + this.dx < smallest_delta){
+                smallest_delta = this.dy + this.dx;
+                this.bit_to_move = j;
             }
         }
         
-        dx = (energy.bits[bit_to_move].x - this.x)
-        dy = (energy.bits[bit_to_move].y - this.y)
+        this.dx = (energy.bits[this.bit_to_move].x - this.x)
+        this.dy = (energy.bits[this.bit_to_move].y - this.y)
         
-        this.x = this.x + dx/Math.abs(dx)
-        this.y = this.y + dy/Math.abs(dy)
+        this.x = this.x + this.dx/Math.abs(this.dx)
+        this.y = this.y + this.dy/Math.abs(this.dy)
     }
 }
 
